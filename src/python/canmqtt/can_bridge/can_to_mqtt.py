@@ -9,10 +9,10 @@ from paho.mqtt.enums import CallbackAPIVersion
 
 # MQTT settings
 # Change to your MQTT broker address
-MQTT_BROKER = os.environ.get("MQTT_BROKER_HOST","terracotta.lan")
-MQTT_PORT = 1883
-MQTT_TOPIC = "can/bridge"
-MQTT_CLIENT_ID = "can_bridge"
+MQTT_BROKER = os.environ.get("MQTT_HOST", "localhost")
+MQTT_PORT = int(os.environ.get("MQTT_PORT", 1883))
+MQTT_TOPIC = os.environ.get("MQTT_TOPIC", "can/bridge")
+MQTT_CLIENT_ID = os.environ.get("MQTT_CLIENT_ID", "can_receiver")
 
 class CANToMQTTBridge:
     def __init__(self, source_channel, dest_topic):
