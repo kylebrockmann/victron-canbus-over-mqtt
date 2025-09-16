@@ -21,7 +21,9 @@ def old_method():
     pass
 
 if __name__ == '__main__':
-    managed_client = ManagedMQTTClient("terracotta.lan", 1883)
+    mqtt_host = os.environ.get("MQTT_HOST", "terracotta.lan")
+    mqtt_port = int(os.environ.get("MQTT_PORT", 1883))
+    managed_client = ManagedMQTTClient(mqtt_host, mqtt_port)
     if managed_client.loop_until_ready():
         logger.info("MQTT client is ready")
     queue = CANBusQueue()
