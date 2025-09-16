@@ -1,11 +1,12 @@
-from canmqtt.can_bridge.can_to_mqtt import CANToMQTTBridge
-from canmqtt.adapters.can_adapter_control import CanAdapter
-from canmqtt.can_bridge.interfaces.can_message_source import CANMessageSource
-from canmqtt.interface.can_monitor import CanInterfaceMonitor
-from canmqtt.mqtt.managed_mqtt import ManagedMQTTClient
-from canmqtt.mqtt.mqtt_message_destination import MQTTMessageDestination
-from canmqtt.queuing.canbus_queue import CANBusQueue
-from canmqtt.util.logger import logger
+import os
+from can_bridge.can_to_mqtt import CANToMQTTBridge
+from adapters.can_adapter_control import CanAdapter
+from can_bridge.interfaces.can_message_source import CANMessageSource
+from interface.can_monitor import CanInterfaceMonitor
+from mqtt.managed_mqtt import ManagedMQTTClient
+from mqtt.mqtt_message_destination import MQTTMessageDestination
+from queuing.canbus_queue import CANBusQueue
+from util.logger import logger
 
 # This old message is kept for reference, but the new architecture uses
 # a more modular approach with queues and separate components.
@@ -21,7 +22,7 @@ def old_method():
     pass
 
 if __name__ == '__main__':
-    mqtt_host = os.environ.get("MQTT_HOST", "terracotta.lan")
+    mqtt_host = os.environ.get("MQTT_HOST", "localhost")
     mqtt_port = int(os.environ.get("MQTT_PORT", 1883))
     managed_client = ManagedMQTTClient(mqtt_host, mqtt_port)
     if managed_client.loop_until_ready():

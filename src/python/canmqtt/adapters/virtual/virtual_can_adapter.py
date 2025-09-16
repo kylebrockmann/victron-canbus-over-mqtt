@@ -1,6 +1,5 @@
 import os
-
-from canmqtt.interface.can_source import CanFrameSource
+from interface.can_source import CanFrameSource
 
 class VirtualCanAdapter:
     def __init__(self, interface_name = "vcan0"):

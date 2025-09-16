@@ -1,20 +1,21 @@
 import time
-
+import os
 import can
 import paho.mqtt.client as mqtt
 import json
-from canmqtt.util.logger import logger
+from util.logger import logger
 
 from paho.mqtt.enums import CallbackAPIVersion
 
 # MQTT settings
-MQTT_BROKER = "terracotta.lan"  # Change to your MQTT broker address
-MQTT_PORT = 1883
-MQTT_TOPIC = "can/bridge"
-MQTT_CLIENT_ID = "can_receiver"
+
+MQTT_BROKER = os.environ.get("MQTT_HOST", "localhost")
+MQTT_PORT = int(os.environ.get("MQTT_PORT", 1883))
+MQTT_TOPIC = os.environ.get("MQTT_TOPIC", "can/bridge")
+MQTT_CLIENT_ID = os.environ.get("MQTT_CLIENT_ID", "can_receiver")
 
 
-class MQTTToCANBridge:
+class MQTToCANBridge:
     def __init__(self, source_topic, dest_channel):
         self.source_topic = source_topic
         self.dest_channel = dest_channel

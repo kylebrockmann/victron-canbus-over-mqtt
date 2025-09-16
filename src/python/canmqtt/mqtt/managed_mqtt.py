@@ -1,6 +1,6 @@
 import time
 import paho.mqtt.client as mqtt
-from canmqtt.util.logger import logger as log
+from util.logger import logger as log
 
 def check_if_port_open(host, port):
     import socket

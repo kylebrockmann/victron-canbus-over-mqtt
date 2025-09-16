@@ -1,6 +1,6 @@
 import os
 
-from canmqtt.interface.can_source import CanFrameSource
+from interface.can_source import CanFrameSource
 
 
 class CanAdapter:

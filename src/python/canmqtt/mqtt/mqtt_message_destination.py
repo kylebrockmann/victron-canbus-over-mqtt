@@ -1,8 +1,8 @@
 import can
 
-from canmqtt.mqtt.managed_mqtt import ManagedMQTTClient
-from canmqtt.util.logger import logger as log
-from canmqtt.queuing.canbus_queue import CANBusQueue
+from mqtt.managed_mqtt import ManagedMQTTClient
+from util.logger import logger as log
+from queuing.canbus_queue import CANBusQueue
 
 
 class MQTTMessageDestination:

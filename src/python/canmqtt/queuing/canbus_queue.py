@@ -7,7 +7,7 @@ from queue import Queue
 import can
 from paho.mqtt.client import MQTTMessage
 import threading
-from canmqtt.util.logger import logger as log
+from util.logger import logger as log
 
 class TerminateProtected:
     killed = False

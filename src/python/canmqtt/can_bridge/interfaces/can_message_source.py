@@ -1,7 +1,7 @@
 import can
-from canmqtt.util.logger import logger as log
+from util.logger import logger as log
 from threading import Thread
-from canmqtt.queuing.canbus_queue import CANBusQueue
+from queuing.canbus_queue import CANBusQueue
 
 
 class CANMessageSource:

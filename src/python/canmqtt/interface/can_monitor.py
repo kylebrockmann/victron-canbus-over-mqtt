@@ -1,6 +1,6 @@
-from canmqtt.interface.can_source import CanFrameSource
+from interface.can_source import CanFrameSource
 import time
-from canmqtt.util.logger import logger as log
+from util.logger import logger as log
 
 class CanInterfaceMonitor:
     def __init__(self, interface_name = "vcan0"):
