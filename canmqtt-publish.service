@@ -1,0 +1,12 @@
+[Unit]
+Description=CANBUS MQTT Publish Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/canmqtt-publish
+Restart=on-failure
+WorkingDirectory=/usr/share/canmqtt
+
+[Install]
+WantedBy=multi-user.target

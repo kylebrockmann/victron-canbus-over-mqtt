@@ -1,0 +1,3 @@
+#!/bin/bash
+source /usr/share/canmqtt/venv12/bin/activate
+/usr/share/canmqtt/venv12/bin/python3 /usr/share/canmqtt/receive.py

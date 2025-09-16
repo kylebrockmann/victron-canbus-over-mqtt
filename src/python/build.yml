@@ -1,0 +1,13 @@
+project: venus-tcp-can-bridge
+git_branch: main
+python:
+  name: venus-tcp-can-bridge
+  version: 1.0.0
+  author: "Kyle Brockmann"
+  author_email: kyle.brockmann@gmail.com
+  classifiers: []
+  description: CAN TCP bridge for Venus
+  entry_points:
+    console_scripts:
+      - venus_can_host = python_can_bridge.main.listen_for_incoming
+      - venus_can_remote = python_can_bridge.main.poll_for_beacon
