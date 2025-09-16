@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "*** starting canmqtt receiver ***"
+exec /usr/local/bin/canmqtt-receive
